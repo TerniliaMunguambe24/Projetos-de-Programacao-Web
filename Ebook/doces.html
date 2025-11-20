@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receitas Doces & Sobremesas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .page {
+            min-height: 297mm;
+            padding: 20mm;
+            page-break-after: always;
+            position: relative;
+        }
+
+        .page-number {
+            position: absolute;
+            bottom: 15mm;
+            right: 20mm;
+            font-size: 10pt;
+            color: #666;
+        }
+
+        /* Capa */
+        .cover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .cover h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48pt;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .cover .subtitle {
+            font-size: 18pt;
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+
+        .cover .decoration {
+            width: 200px;
+            height: 2px;
+            background: white;
+            margin: 30px 0;
+        }
+
+        /* Sumário */
+        .toc h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32pt;
+            color: #667eea;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .toc-item {
+            margin: 15px 0;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .toc-category {
+            font-weight: 600;
+            font-size: 14pt;
+            color: #764ba2;
+            margin-top: 20px;
+        }
+
+        .toc-recipe {
+            padding-left: 20px;
+            font-size: 11pt;
+            color: #555;
+        }
+
+        /* Páginas de categoria */
+        .category-page {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .category-page h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42pt;
+            text-align: center;
+        }
+
+        /* Receitas */
+        .recipe h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24pt;
+            color: #667eea;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #764ba2;
+            padding-bottom: 10px;
+        }
+
+        .recipe-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            font-size: 14pt;
+            font-weight: 600;
+            color: #764ba2;
+            margin: 20px 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .ingredients, .instructions {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .ingredients ul, .instructions ol {
+            padding-left: 20px;
+        }
+
+        .ingredients li, .instructions li {
+            margin: 8px 0;
+            font-size: 10pt;
+        }
+
+        .nutrition {
+            background: #e8f4f8;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #667eea;
+        }
+
+        .nutrition h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .notes {
+            background: #fff9e6;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ffd700;
+            margin-top: 20px;
+        }
+
+        .notes h4 {
+            color: #d4a017;
+            margin-bottom: 10px;
+        }
+
+        .notes p {
+            font-size: 10pt;
+            font-style: italic;
+        }
+
+        @media print {
+            .page {
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- CAPA -->
+        <div class="page cover">
+            <h1>Receitas Doces<br>& Sobremesas</h1>
+            <div class="decoration"></div>
+            <p class="subtitle">Uma coleção completa de delícias irresistíveis</p>
+            <p style="margin-top: 40px; font-size: 12pt;">40 receitas organizadas por categorias</p>
+        </div>
+
+        <!-- SUMÁRIO -->
+        <div class="page toc">
+            <h2>Sumário</h2>
+            <div class="toc-item toc-category">Gelados e Sorbets</div>
+            <div class="toc-item toc-recipe">• Gelado de morango</div>
+            <div class="toc-item toc-recipe">• Gelado de chocolate belga</div>
+            <div class="toc-item toc-recipe">• Sorbet de manga e maçã verde</div>
+            <div class="toc-item toc-recipe">• Gelado de queijo com gengibre e manjericão</div>
+            <div class="toc-item toc-recipe">• Gelado de ameixa e rum</div>
+            <div class="toc-item toc-recipe">• Sorbet de banana com pêssego e laranja</div>
+            <div class="toc-item toc-recipe">• Gelado de iogurte e frutos vermelhos</div>
+            <div class="toc-item toc-recipe">• Gelado stracciatella de pêra</div>
+
+            <div class="toc-item toc-category">Mousses e Cremes</div>
+            <div class="toc-item toc-recipe">• Leite-creme</div>
+            <div class="toc-item toc-recipe">• Mousse de chocolate e framboesa</div>
+            <div class="toc-item toc-recipe">• Mousse de Mascarpone e morangos</div>
+            <div class="toc-item toc-recipe">• Mousse de chocolate</div>
+
+            <div class="toc-item toc-category">Bolos</div>
+            <div class="toc-item toc-recipe">• Bolo cremoso de chocolate e frutos vermelhos</div>
+            <div class="toc-item toc-recipe">• Bolo de iogurte</div>
+            <div class="toc-item toc-recipe">• Bolo de cenoura</div>
+            <div class="toc-item toc-recipe">• Bolo de noz com canela e laranja</div>
+            <div class="toc-item toc-recipe">• Pão-de-ló</div>
+
+            <div class="toc-item toc-category">Bolachas e Queques</div>
+            <div class="toc-item toc-recipe">• Bolachas de aveia e sésamo com laranja</div>
+            <div class="toc-item toc-recipe">• Bolachas de mel e canela</div>
+            <div class="toc-item toc-recipe">• Queques de mirtilos e morangos</div>
+            <div class="toc-item toc-recipe">• Muffins de aveia com bagas goji</div>
+            <div class="page-number">2</div>
+        </div>
+
+        <div class="page toc">
+            <div class="toc-item toc-category">Pudins</div>
+            <div class="toc-item toc-recipe">• Pudim de pão com banana e canela</div>
+            <div class="toc-item toc-recipe">• Pudim de claras com maracujá</div>
+            <div class="toc-item toc-recipe">• Pudim flan</div>
+
+            <div class="toc-item toc-category">Tartes</div>
+            <div class="toc-item toc-recipe">• Tarte de maçã</div>
+            <div class="toc-item toc-recipe">• Tarte de amêndoa</div>
+            <div class="toc-item toc-recipe">• Tarte de requeijão com framboesas</div>
+            <div class="toc-item toc-recipe">• Tarte de limão merengada</div>
+
+            <div class="toc-item toc-category">Outros Doces</div>
+            <div class="toc-item toc-recipe">• Arroz-doce</div>
+            <div class="toc-item toc-recipe">• Trufas de chocolate com rum e amêndoa</div>
+            <div class="toc-item toc-recipe">• Brownie</div>
+            <div class="toc-item toc-recipe">• Cheesecake</div>
+            <div class="toc-item toc-recipe">• Cheesecake de maracujá</div>
+            <div class="toc-item toc-recipe">• Ovos moles</div>
+            <div class="toc-item toc-recipe">• Salame de chocolate</div>
+            <div class="toc-item toc-recipe">• Tiramisu</div>
+            <div class="toc-item toc-recipe">• Pavlova</div>
+            <div class="toc-item toc-recipe">• Torta básica</div>
+            <div class="toc-item toc-recipe">• Bavaroise de ananás</div>
+            <div class="page-number">3</div>
+        </div>
+
+        <!-- CATEGORIA: GELADOS E SORBETS -->
+        <div class="page category-page">
+            <h2>Gelados e Sorbets</h2>
+            <div class="page-number">4</div>
+        </div>
+
+        <!-- RECEITA: Gelado de Morango -->
+        <div class="page recipe">
+            <h3>Gelado de Morango</h3>
+            <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=800&q=80" alt="Gelado de Morango" class="recipe-image">
+            
+            <div class="section-title">Ingredientes</div>
+            <div class="ingredients">
+                <ul>
+                    <li>500g de morangos frescos</li>
+                    <li>200ml de natas frescas</li>
+                    <li>150g de açúcar</li>
+                    <li>200ml de leite integral</li>
+                    <li>1 colher de chá de essência de baunilha</li>
+                    <li>Sumo de meio limão</li>
+                </ul>
+            </div>
+
+            <div class="section-title">Modo de Preparo</div>
+            <div class="instructions">
+                <ol>
+                    <li>Lave e retire as folhas dos morangos. Corte em pedaços pequenos.</li>
+                    <li>Triture os morangos com o açúcar e o sumo de limão até obter um puré homogéneo.</li>
+                    <li>Numa tigela, misture as natas, o leite e a essência de baunilha.</li>
+                    <li>Adicione o puré de morangos à mistura de natas e mexa bem.</li>
+                    <li>Coloque a mistura na máquina de gelados e siga as instruções do fabricante.</li>
+                    <li>Se não tiver máquina, congele em recipiente, mexendo a cada 30 minutos durante 3-4 horas.</li>
+                    <li>Sirva decorado com morangos frescos.</li>
+                </ol>
+            </div>
+
+            <div class="nutrition">
+                <h4>Informação Nutricional (por 100g)</h4>
+                <p>Calorias: 185 kcal | Gorduras: 8g | Hidratos de Carbono: 26g | Proteínas: 2g</p>
+            </div>
+
+            <div class="notes">
+                <h4>💡 Dicas e Notas</h4>
+                <p>Para um sabor mais intenso, deixe os morangos macerar com o açúcar durante 30 minutos antes de triturar. Pode substituir metade dos morangos por framboesas para uma versão diferente.</p>
+            </div>
+            <div class="page-number">5</div>
+        </div>
+
+        <!-- RECEITA: Gelado de Chocolate Belga -->
+        <div class="page recipe">
+            <h3>Gelado de Chocolate Belga</h3>
+            <img src="https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?w=800&q=80" alt="Gelado de Chocolate" class="recipe-image">
+            
+            <div class="section-title">Ingredientes</div>
+            <div class="ingredients">
+                <ul>
+                    <li>200g de chocolate negro belga (70% cacau)</li>
+                    <li>300ml de natas frescas</li>
+                    <li>250ml de leite integral</li>
+                    <li>120g de açúcar</li>
+                    <li>4 gemas de ovo</li>
+                    <li>2 colheres de sopa de cacau em pó</li>
+                    <li>1 pitada de sal</li>
+                </ul>
+            </div>
+
+            <div class="section-title">Modo de Preparo</div>
+            <div class="instructions">
+                <ol>
+                    <li>Derreta o chocolate em banho-maria e reserve.</li>
+                    <li>Aqueça o leite com metade do açúcar até começar a ferver.</li>
+                    <li>Bata as gemas com o restante açúcar até ficarem esbranquiçadas.</li>
+                    <li>Adicione o leite quente às gemas, mexendo constantemente.</li>
+                    <li>Volte ao lume brando, mexendo até engrossar (não deixe ferver).</li>
+                    <li>Retire do lume e adicione o chocolate derretido e o cacau.</li>
+                    <li>Deixe arrefecer e adicione as natas batidas.</li>
+                    <li>Congele na máquina de gelados ou no congelador, mexendo regularmente.</li>
+                </ol>
+            </div>
+
+            <div class="nutrition">
+                <h4>Informação Nutricional (por 100g)</h4>
+                <p>Calorias: 245 kcal | Gorduras: 16g | Hidratos de Carbono: 22g | Proteínas: 4g</p>
+            </div>
+
+            <div class="notes">
+                <h4>💡 Dicas e Notas</h4>
+                <p>Use chocolate de qualidade superior para um resultado cremoso e saboroso. Adicione lascas de chocolate na fase final para textura extra.</p>
+            </div>
+            <div class="page-number">6</div>
+        </div>
+
+        <!-- RECEITA: Sorbet de Manga e Maçã Verde -->
+        <div class="page recipe">
+            <h3>Sorbet de Manga e Maçã Verde</h3>
+            <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800&q=80" alt="Sorbet de Manga" class="recipe-image">
+            
+            <div class="section-title">Ingredientes</div>
+            <div class="ingredients">
+                <ul>
+                    <li>2 mangas maduras grandes</li>
+                    <li>2 maçãs verdes</li>
+                    <li>150g de açúcar</li>
+                    <li>200ml de água</li>
+                    <li>Sumo de 1 limão</li>
+                    <li>Raspas de 1 lima</li>
+                </ul>
+            </div>
+
+            <div class="section-title">Modo de Preparo</div>
+            <div class="instructions">
+                <ol>
+                    <li>Faça uma calda com o açúcar e a água, fervendo por 5 minutos. Deixe arrefecer.</li>
+                    <li>Descasque as mangas e corte a polpa em cubos.</li>
+                    <li>Descasque as maçãs e corte em pedaços pequenos.</li>
+                    <li>Triture as frutas com a calda, o sumo de limão e as raspas de lima.</li>
+                    <li>Passe por um coador fino para remover fibras.</li>
+                    <li>Congele na máquina de gelados ou no congelador.</li>
+                    <li>Se usar congelador, mexa a cada 30 minutos para evitar cristais grandes.</li>
+                </ol>
+            </div>
+
+            <div class="nutrition">
+                <h4>Informação Nutricional (por 100g)</h4>
+                <p>Calorias: 95 kcal | Gorduras: 0g | Hidratos de Carbono: 24g | Proteínas: 0.5g</p>
+            </div>
+
+            <div class="notes">
+                <h4>💡 Dicas e Notas</h4>
+                <p>Esta combinação tropical-ácida é refrescante e perfeita para dias quentes. Sirva com folhas de hortelã fresca.</p>
+            </div>
+            <div class="page-number">7</div>
+        </div>
+
+        <!-- CATEGORIA: MOUSSES E CREMES -->
+        <div class="page category-page">
+            <h2>Mousses e Cremes</h2>
+            <div class="page-number">8</div>
+        </div>
+
+        <!-- RECEITA: Leite-Creme -->
+        <div class="page recipe">
+            <h3>Leite-Creme</h3>
+            <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?w=800&q=80" alt="Leite-Creme" class="recipe-image">
+            
+            <div class="section-title">Ingredientes</div>
+            <div class="ingredients">
+                <ul>
+                    <li>1 litro de leite</li>
+                    <li>8 gemas de ovo</li>
+                    <li>200g de açúcar</li>
+                    <li>4 colheres de sopa de farinha Maizena</li>
+                    <li>Casca de 1 limão</li>
+                    <li>1 pau de canela</li>
+                    <li>Açúcar para queimar</li>
+                </ul>
+            </div>
+
+            <div class="section-title">Modo de Preparo</div>
+            <div class="instructions">
+                <ol>
+                    <li>Ferva o leite com a casca de limão e o pau de canela. Deixe arrefecer.</li>
+                    <li>Bata as gemas com o açúcar até ficarem esbranquiçadas.</li>
+                    <li>Adicione a Maizena e misture bem.</li>
+                    <li>Retire a casca de limão e a canela do leite.</li>
+                    <li>Adicione o leite morno às gemas, mexendo sempre.</li>
+                    <li>Leve ao lume brando, mexendo constantemente até engrossar.</li>
+                    <li>Distribua por taças individuais e deixe arrefecer.</li>
+                    <li>Polvilhe com açúcar e queime com maçarico ou no grelhador.</li>
+                </ol>
+            </div>
+
+            <div class="nutrition">
+                <h4>Informação Nutricional (por porção)</h4>
+                <p>Calorias: 285 kcal | Gorduras: 9g | Hidratos de Carbono: 42g | Proteínas: 8g</p>
+            </div>
+
+            <div class="notes">
+                <h4>💡 Dicas e Notas</h4>
+                <p>O segredo está em mexer constantemente para não criar grumos. A camada de açúcar queimado deve estar crocante.</p>
+            </div>
+            <div class="page-number">9</div>
+        </div>
+
+        <!-- RECEITA: Mousse de Chocolate e Framboesa -->
+        <div class="page recipe">
+            <h3>Mousse de Chocolate e Framboesa</h3>
+            <img src="https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=800&q=80" alt="Mousse de Chocolate" class="recipe-image">
+            
+            <div class="section-title">Ingredientes</div>
+            <div class="ingredients">
+                <ul>
+                    <li>200g de chocolate negro</li>
+                    <li>4 ovos</li>
+                    <li>50g de açúcar</li>
+                    <li>200ml de natas para bater</li>
+                    <li>150g de framboesas frescas</li>
+                    <li>2 colheres de sopa de licor de framboesa (opcional)</li>
+                </ul>
+            </div>
+
+            <div class="section-title">Modo de Preparo</div>
+            <div class="instructions">
+                <ol>
+                    <li>Derreta o chocolate em banho-maria e deixe arrefecer ligeiramente.</li>
+                    <li>Separe as claras das gemas.</li>
+                    <li>Bata as gemas com metade do açúcar até ficarem cremosas.</li>
+                    <li>Adicione o chocolate derretido às gemas e misture.</li>
+                    <li>Bata as claras em castelo com o restante açúcar.</li>
+                    <li>Bata as natas até ficarem firmes.</li>
+                    <li>Incorpore delicadamente as claras e as natas ao chocolate.</li>
+                    <li>Esmague metade das framboesas e misture na mousse.</li>
+                    <li>Distribua por taças e decore com framboesas inteiras.</li>
+                    <li>Leve ao frigorífico por 3-4 horas antes de servir.</li>
+                </ol>
+            </div>
+
+            <div class="nutrition">
+                <h4>Informação Nutricional (por porção)</h4>
+                <p>Calorias: 320 kcal | Gorduras: 22g | Hidratos de Carbono: 26g | Proteínas: 6g</p>
+            </div>
+
+            <div class="notes">
+                <h4>💡 Dicas e Notas</h4>
+                <p>A combinação de chocolate negro com framboesas cria um contraste perfeito. Use chocolate de qualidade para melhor resultado.</p>
+            </div>
+            <div class="page-number">10</div>
+        </div>
+
+        <!-- CATEGORIA: BOLOS -->
+        <div class="page category-page">
+            <h2>Bolos</h2>
+            <div class="page-number">11</div>
+        </div>
+
+        <!-- RECEITA: Bolo de Iogurte -->
+        <div class="page recipe">
+            <h3>Bolo de Iogurte</h3>
+            <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=800&q=80" alt="Bolo de Iogurte" class="recipe-image">
+            
+            <div class="section-title">Ingredientes</div>
+            <div class="ingredients">
+                <ul>
+                    <li>1 iogurte natural (125ml)</li>
+                    <li>3 ovos</li>
+                    <li>2 medidas de açúcar (use o copo do iogurte)</li>
+                    <li>3 medidas de farinha</li>
+                    <li>1 medida de óleo</li>
+                    <li>1 colher de sopa de fermento em pó</li>
+                    <li>Raspas de 1 limão</li>
+                    <li>1 pitada de sal</li>
+                </ul>
+            </div>
+
+            <div class="section-title">Modo de Preparo</div>
+            <div class="instructions">
+                <ol>
+                    <li>Pré-aqueça o forno a 180°C.</li>
+                    <li>Unte uma forma com manteiga e polvilhe com farinha.</li>
+                    <li>Bata os ovos com o açúcar até ficarem fofinhos.</li>
+                    <li>Adicione o iogurte, o óleo e as raspas de limão.</li>
+                    <li>Junte a farinha, o fermento e o sal peneirados.</li>
+                    <li>Misture delicadamente até obter uma massa homogénea.</li>
+                    <li>Deite na forma e leve ao forno por 35-40 minutos.</li>
+                    <li>Faça o teste do palito antes de retirar.</li>
+                    <li>Deixe arrefecer antes de desenformar.</li>
+                </ol>
+            </div>
+
+            <div class="nutrition">
+                <h4>Informação Nutricional (por fatia)</h4>
+                <p>Calorias: 195 kcal | Gorduras: 7g | Hidratos de Carbono: 28g | Proteínas: 4g</p>
+            </div>
+
+            <div class="notes">
+                <h4>💡 Dicas e Notas</h4>
+                <p>Este bolo é perfeito para o lanche. Pode adicionar pepitas de chocolate ou frutos secos para variar.</p>
+            </div>
+            <div class="page-number">12</div>
+        </div>
+
+        <!-- RECEITA: Bolo de Cenoura -->
+        <div class="page recipe">
+            <h3>Bolo de Cenoura</h3>
+            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80" alt="Bolo de Cenoura" class="recipe-image">
+            
+            <div class="section-title">Ingredientes</div>
+            <div class="ingredients">
+                <ul>
+                    <li>3 cenouras médias (cerca de 300g)</li>
+                    <li>4 ovos</li>
+                    <li>240g de açúcar</li>
+                    <li>240ml de óleo</li>
+                    <li>300g de farinha de trigo</li>
+                    <li>1 colher de sopa de fermento em pó</li>
+                    <li><strong>Cobertura:</strong> 200g chocolate, 1 lata leite condensado, 2 colheres manteiga</li>
+                </ul>
+            </div>
+
+            <div class="section-title">Modo de Preparo</div>
+            <div class="instructions">
+                <ol>
+                    <li>Pré-aqueça o forno a 180°C e unte uma forma.</li>
+                    <li>Descasque e corte as cenouras em rodelas.</li>
+                    <li>Bata no liquidificador as cenouras, ovos, açúcar e óleo.</li>
+                    <li>Despeje numa tigela e adicione a farinha peneirada.</li>
+                    <li>Por último, adicione o fermento e misture delicadamente.</li>
+                    <li>Despeje na forma e asse por 40 minutos.</li>
+                    <li>Para a cobertura: derreta o chocolate com o leite condensado e manteiga.</li>
+                    <li>Cubra o bolo ainda quente e deixe espalhar naturalmente.</li>
+                </ol>
+            </div>
+
+            <div class="nutrition">
+                <h4>Informação Nutricional (por fatia)</h4>
+                <p>Calorias: 385 kcal | Gorduras: 18g | Hidratos de Carbono: 48g | Proteínas: 6g</p>
+            </div>
+
+            <div class="notes">
+                <h4>💡 Dicas e Notas</h4>
+                <p>Um clássico brasileiro! A cenoura mantém o bolo húmido por vários dias. Pode fazer sem cobertura para uma versão mais leve.</p>
+            </div>
+            <div class="page-number">13</div>
+        </div>
+
+        <!-- CATEGORIA: BOLACHAS E QUEQUES -->
+        <div class="page category-page">
+            <h2>Bolachas e Queques</h2>
+            <div class="page-number">14</div>
+        </div>
+
+        <!-- RECEITA: Bolachas de Aveia e Sésamo com Laranja -->
+        <div class="page recipe">
+            <h3>Bolachas de Aveia e Sésamo com Laranja</h3>
+            <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=800&q=80" alt="Bolachas de Aveia" class="recipe-image">
+            
+            <div class="section-title">Ingredientes</div>
+            <div class="ingredients">
+                <ul>
+                    <li>200g de flocos de aveia</li>
+                    <li>100g de farinha de trigo</li>
+                    <li>100g de açúcar mascavado</li>
+                    <li>80g de manteiga derretida</li>
+                    <li>1 ovo</li>
+                    <li>3 colheres de sopa de sementes de sésamo</li>
+                    <li>Raspas de 2 laranjas</li>
+                    <li>Sumo de 1 laranja</li>
+                    <li>1 colher de chá de fermento</li>
+                </ul>
+            </div>
+
+            <div class="section-title">Modo de Preparo</div>
+            <div class="instructions">
+                <ol>
+                    <li>Pré-aqueça o forno a 180°C.</li>
+                    <li>Misture a aveia, farinha, açúcar, sésamo e fermento.</li>
+                    <li>Adicione a manteiga derretida, o ovo, as raspas e o sumo de laranja.</li>
+                    <li>Mexa até formar uma massa homogénea.</li>
+                    <li>Faça bolinhas e achate ligeiramente sobre tabuleiro forrado.</li>
+                    <li>Asse por 12-15 minutos até dourarem.</li>
+                    <li>Deixe arrefecer completamente antes de retirar do tabuleiro.</li>
+                </ol>
+            </div>
+
+            <div class="nutrition">
+                <h4>Informação Nutricional (por bolacha)</h4>
+                <p>Calorias: 95 kcal | Gorduras: 4g | Hidratos de Carbono: 13g | Proteínas: 2g | Fibra: 1.5g</p>
+            </div>
+
+            <div class="notes">
+                <h4>💡 Dicas e Notas</h4>
+                <p>Estas bolachas são perfeitas para o pequeno-almoço. Guarde em recipiente hermético para manterem crocantes.</p>
+            </div>
+            <div class="page-number">15</div>
+        </div>
+
+        <!-- RECEITA: Queques de Mirtilos e Morangos -->
+        <div class="page recipe">
+            <h3>Queques de Mirtilos e Morangos</h3>
+            <img src="https://images.unsplash.com/photo-1426869884541-df7117556757?w=800&q=80" alt="Queques de Frutos Vermelhos" class="recipe-image">
+            
+            <div class="section-title">Ingredientes</div>
+            <div class="ingredients">
+                <ul>
+                    <li>250g de farinha de trigo</li>
+                    <li>150g de açúcar</li>
+                    <li>2 ovos</li>
+                    <li>125ml de leite</li>
+                    <li>80g de manteiga derretida</li>
+                    <li>100g de mirtilos frescos</li>
+                    <li>100g de morangos cortados</li>
+                    <li>2 colheres de chá de fermento</li>
+                    <li>1 colher de chá de essência de baunilha</li>
+                </ul>
+            </div>
+
+            <div class="section-title">Modo de Preparo</div>
+            <div class="instructions">
+                <ol>
+                    <li>Pré-aqueça o forno a 180°C e prepare forminhas.</li>
+                    <li>Bata os ovos com o açúcar até ficarem fofinhos.</li>
+                    <li>Adicione o leite, a manteiga derretida e a baunilha.</li>
+                    <li>Incorpore a farinha e o fermento peneirados.</li>
+                    <li>Envolva delicadamente os mirtilos e morangos.</li>
+                    <li>Distribua a massa pelas forminhas (3/4 da capacidade).</li>
+                    <li>Asse por 20-25 minutos até dourarem.</li>
+                    <li>Deixe arrefecer 5 minutos antes de desenformar.</li>
+                </ol>
+            </div>
+
+            <div class="nutrition">
+                <h4>Informação Nutricional (por queque)</h4>
+                <p>Calorias: 165 kcal | Gorduras: 6g | Hidratos de Carbono: 25g | Proteínas: 3g</p>
+            </div>
+
+            <div class="notes">
+                <h4>💡 Dicas e Notas</h4>
+                <p>Para evitar que os frutos afundem, passe-os por farinha antes de adicionar à massa. Deliciosos ao pequeno-almoço!</p>
+            </div>
+            <div class="page-number">16</div>
+        </div>
+
+        <!-- CATEGORIA: PUDINS -->
+        <div class="page category-page">
+            <h2>Pudins</h2>
+            <div class="page-number">17</div>
+        </div>
+
+        <!-- RECEITA: Pudim Flan -->
+        <div class="page recipe">
+            <h3>Pudim Flan</h3>
+            <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?w=800&q=80" alt="Pudim Flan" class="recipe-image">
+            
+            <div class="section-title">Ingredientes</div>
+            <div class="ingredients">
+                <ul>
+                    <li>1 lata de leite condensado</li>
+                    <li>2 latas de leite (use a lata do condensado)</li>
+                    <li>4 ovos</li>
+                    <li>200g de açúcar para o caramelo</li>
+                    <li>1 colher de chá de essência de baunilha</li>
+                </ul>
+            </div>
+
+            <div class="section-title">Modo de Preparo</div>
+            <div class="instructions">
+                <ol>
+                    <li>Prepare o caramelo: derreta o açúcar em lume médio até dourar.</li>
+                    <li>Despeje o caramelo numa forma de pudim e espalhe bem.</li>
+                    <li>Bata no liquidificador os ovos, leite condensado, leite e baunilha.</li>
+                    <li>Despeje a mistura sobre o caramelo.</li>
+                    <li>Cubra com papel alumínio.</li>
+                    <li>Coza em banho-maria no forno a 180°C por 60 minutos.</li>
+                    <li>Deixe arrefecer completamente antes de desenformar.</li>
+                    <li>Leve ao frigorífico por pelo menos 4 horas.</li>
+                </ol>
+            </div>
+
+            <div class="nutrition">
+                <h4>Informação Nutricional (por fatia)</h4>
+                <p>Calorias: 285 kcal | Gorduras: 8g | Hidratos de Carbono: 45g | Proteínas: 8g</p>
+            </div>
+
+            <div class="notes">
+                <h4>💡 Dicas e Notas</h4>
+                <p>O segredo está no banho-maria para cozimento uniforme. Desenformar ainda morno pode quebrar o pudim.</p>
+            </div>
+            <div class="page-number">18</div>
+        </div>
+
+        <!-- RECEITA: Pudim de Pão com Banana e Canela -->
+        <div class="page recipe">
+            <h3>Pudim de Pão com Banana e Canela</h3>
+            <img src="https://images.unsplash.com/photo-1589227365533-cee630aa7da6?w=800&q=80" alt="Pudim de Pão" class="recipe-image">
+            
+            <div class="section-title">Ingredientes</div>
+            <div class="ingredients">
+                <ul>
+                    <li>400g de pão amanhecido cortado em cubos</li>
+                    <li>500ml de leite</li>
+                    <li>3 bananas maduras</li>
+                    <li>3 ovos</li>
+                    <li>150g de açúcar mascavado</li>
+                    <li>2 colheres de chá de canela em pó</li>
+                    <li>50g de manteiga</li>
+                    <li>150g de açúcar para o caramelo</li>
+                </ul>
+            </div>
+
+            <div class="section-title">Modo de Preparo</div>
+            <div class="instructions">
+                <ol>
+                    <li>Faça o caramelo e forre a forma de pudim.</li>
+                    <li>Corte as bananas em rodelas e disponha sobre o caramelo.</li>
+                    <li>Demolhe o pão no leite morno por 10 minutos.</li>
+                    <li>Bata os ovos com o açúcar mascavado e a canela.</li>
+                    <li>Junte o pão demolhado e a manteiga derretida.</li>
+                    <li>Misture bem até obter textura homogénea.</li>
+                    <li>Despeje sobre as bananas na forma.</li>
+                    <li>Asse em banho-maria a 180°C por 50-60 minutos.</li>
+                    <li>Deixe arrefecer e desenformar.</li>
+                </ol>
+            </div>
+
+            <div class="nutrition">
+                <h4>Informação Nutricional (por fatia)</h4>
+                <p>Calorias: 265 kcal | Gorduras: 7g | Hidratos de Carbono: 44g | Proteínas: 6g</p>
+            </div>
+
+            <div class="notes">
+                <h4>💡 Dicas e Notas</h4>
+                <p>Perfeito para aproveitar pão velho. A combinação de banana com canela é clássica e irresistível!</p>
+            </div>
+            <div class="page-number">19</div>
+        </div>
+
+        <!-- CATEGORIA: TARTES -->
+        <div class="page category-page">
+            <h2>Tartes</h2>
+            <div class="page-number">20</div>
+        </div>
+
+        <!-- RECEITA: Tarte de Maçã -->
+        <div class="page recipe">
+            <h3>Tarte de Maçã</h3>
+            <img src="https://images.unsplash.com/photo-1535920527002-b35e96722eb9?w=800&q=80" alt="Tarte de Maçã" class="recipe-image">
+            
+            <div class="section-title">Ingredientes</div>
+            <div class="ingredients">
+                <ul>
+                    <li><strong>Massa:</strong> 250g farinha, 125g manteiga fria, 1 ovo, 2 colheres açúcar, pitada sal</li>
+                    <li><strong>Recheio:</strong> 6 maçãs reineta, 80g açúcar, sumo de 1 limão, canela</li>
+                    <li><strong>Creme:</strong> 2 ovos, 100ml natas, 50g açúcar, raspas de limão</li>
+                    <li>Geleia de alperce para pincelar</li>
+                </ul>
+            </div>
+
+            <div class="section-title">Modo de Preparo</div>
+            <div class="instructions">
+                <ol>
+                    <li>Prepare a massa: misture farinha, manteiga em cubos, açúcar e sal.</li>
+                    <li>Adicione o ovo e amasse rapidamente. Refrigere 30 minutos.</li>
+                    <li>Descasque as maçãs e corte em fatias finas.</li>
+                    <li>Salteie com açúcar, canela e sumo de limão por 5 minutos.</li>
+                    <li>Estenda a massa e forre uma tarteira.</li>
+                    <li>Disponha as maçãs em círculos sobrepostos.</li>
+                    <li>Misture ovos, natas, açúcar e raspas. Despeje sobre as maçãs.</li>
+                    <li>Asse a 180°C por 35-40 minutos.</li>
+                    <li>Pincele com geleia de alperce morna.</li>
+                </ol>
+            </div>
+
+            <div class="nutrition">
+                <h4>Informação Nutricional (por fatia)</h4>
+                <p>Calorias: 295 kcal | Gorduras: 14g | Hidratos de Carbono: 38g | Proteínas: 5g</p>
+            </div>
+
+            <div class="notes">
+                <h4>💡 Dicas e Notas</h4>
+                <p>Use maçãs ligeiramente ácidas para equilibrar o doce. Sirva morna com gelado de baunilha.</p>
+            </div>
+            <div class="page-number">21</div>
+        </div>
+
+        <!-- RECEITA: Tarte de Limão Merengada -->
+        <div class="page recipe">
+            <h3>Tarte de Limão Merengada</h3>
+            <img src="https://images.unsplash.com/photo-1519915212116-7cfef71f1d3e?w=800&q=80" alt="Tarte de Limão" class="recipe-image">
+            
+            <div class="section-title">Ingredientes</div>
+            <div class="ingredients">
+                <ul>
+                    <li><strong>Base:</strong> 200g bolachas maria trituradas, 100g manteiga derretida</li>
+                    <li><strong>Creme:</strong> Sumo de 4 limões, raspas de 2 limões, 1 lata leite condensado, 4 gemas</li>
+                    <li><strong>Merengue:</strong> 4 claras, 200g açúcar, 1 pitada sal</li>
+                </ul>
+            </div>
+
+            <div class="section-title">Modo de Preparo</div>
+            <div class="instructions">
+                <ol>
+                    <li>Misture as bolachas trituradas com a manteiga derretida.</li>
+                    <li>Forre o fundo de uma tarteira e compacte bem. Refrigere.</li>
+                    <li>Bata as gemas com o leite condensado, sumo e raspas de limão.</li>
+                    <li>Despeje sobre a base e asse a 180°C por 15 minutos.</li>
+                    <li>Para o merengue: bata as claras com sal até firmes.</li>
+                    <li>Adicione o açúcar gradualmente, batendo até brilhante.</li>
+                    <li>Cubra o creme com o merengue, formando picos.</li>
+                    <li>Leve ao forno para dourar levemente (5 minutos).</li>
+                    <li>Refrigere por 3 horas antes de servir.</li>
+                </ol>
+            </div>
+
+            <div class="nutrition">
+                <h4>Informação Nutricional (por fatia)</h4>
+                <p>Calorias: 385 kcal | Gorduras: 16g | Hidratos de Carbono: 54g | Proteínas: 7g</p>
+            </div>
+
+            <div class="notes">
+                <h4>💡 Dicas e Notas</h4>
+                <p>O contraste entre o creme ácido e o merengue doce é perfeito. Não asse demais o merengue para não ressecar.</p>
+            </div>
+            <div class="page-number">22</div>
+        </div>
+
+        <!-- CATEGORIA: OUTROS DOCES -->
+        <div class="page category-page">
+            <h2>Outros Doces</h2>
+            <div class="page-number">23</div>
+        </div>
+
+        <!-- RECEITA: Arroz-Doce -->
+        <div class="page recipe">
+            <h3>Arroz-Doce</h3>
+            <img src="https://images.unsplash.com/photo-1612240498035-3f66c5df4ba1?w=800&q=80" alt="Arroz-Doce" class="recipe-image">
+            
+            <div class="section-title">Ingredientes</div>
+            <div class="ingredients">
+                <ul>
+                    <li>200g de arroz carolino</li>
+                    <li>1 litro de leite gordo</li>
+                    <li>200g de açúcar</li>
+                    <li>6 gemas de ovo</li>
+                    <li>Casca de 1 limão</li>
+                    <li>1 pau de canela</li>
+                    <li>Canela em pó para polvilhar</li>
+                    <li>1 pitada de sal</li>
+                </ul>
+            </div>
+
+            <div class="section-title">Modo de Preparo</div>
+            <div class="instructions">
+                <ol>
+                    <li>Coza o arroz em água com sal e a casca de limão até ficar macio.</li>
+                    <li>Escorra e reserve.</li>
+                    <li>Ferva o leite com o pau de canela.</li>
+                    <li>Adicione o arroz e coza em lume brando, mexendo frequentemente.</li>
+                    <li>Quando o arroz estiver cremoso, adicione o açúcar.</li>
+                    <li>Bata as gemas e tempere com um pouco do arroz quente.</li>
+                    <li>Adicione as gemas ao arroz, mexendo sempre.</li>
+                    <li>Coza por mais 2-3 minutos sem ferver.</li>
+                    <li>Distribua por taças e polvilhe com canela.</li>
+                    <li>Sirva frio ou morno.</li>
+                </ol>
+            </div>
+
+            <div class="nutrition">
+                <h4>Informação Nutricional (por porção)</h4>
+                <p>Calorias: 315 kcal | Gorduras: 9g | Hidratos de Carbono: 48g | Proteínas: 9g</p>
+            </div>
+
+            <div class="notes">
+                <h4>💡 Dicas e Notas</h4>
+                <p>Um clássico português! O segredo está em mexer constantemente e não deixar ferver após adicionar as gemas.</p>
+            </div>
+            <div class="page-number">24</div>
+        </div>
+
+        <!-- RECEITA: Brownie -->
+        <div class="page recipe">
+            <h3>Brownie</h3>
+            <img src="https://images.unsplash.com/photo-1607920591413-4ec007e70023?w=800&q=80" alt="Brownie" class="recipe-image">
+            
+            <div class="section-title">Ingredientes</div>
+            <div class="ingredients">
+                <ul>
+                    <li>200g de chocolate negro</li>
+                    <li>150g de manteiga</li>
+                    <li>3 ovos</li>
+                    <li>200g de açúcar</li>
+                    <li>100g de farinha de trigo</li>
+                    <li>30g de cacau em pó</li>
+                    <li>100g de nozes picadas (opcional)</li>
+                    <li>1 colher de chá de essência de baunilha</li>
+                    <li>1 pitada de sal</li>
+                </ul>
+            </div>
+
+            <div class="section-title">Modo de Preparo</div>
+            <div class="instructions">
+                <ol>
+                    <li>Pré-aqueça o forno a 180°C e forre uma forma quadrada.</li>
+                    <li>Derreta o chocolate com a manteiga em banho-maria.</li>
+                    <li>Deixe arrefecer ligeiramente.</li>
+                    <li>Bata os ovos com o açúcar até ficarem cremosos.</li>
+                    <li>Adicione o chocolate derretido e a baunilha.</li>
+                    <li>Incorpore a farinha, o cacau e o sal peneirados.</li>
+                    <li>Adicione as nozes se desejar.</li>
+                    <li>Despeje na forma e asse por 25-30 minutos.</li>
+                    <li>O centro deve ficar ligeiramente húmido.</li>
+                    <li>Deixe arrefecer completamente antes de cortar.</li>
+                </ol>
+            </div>
+
+            <div class="nutrition">
+                <h4>Informação Nutricional (por quadrado)</h4>
+                <p>Calorias: 285 kcal | Gorduras: 17g | Hidratos de Carbono: 29g | Proteínas: 4g</p>
+            </div>
+
+            <div class="notes">
+                <h4>💡 Dicas e Notas</h4>
+                <p>Não asse demais! O brownie perfeito é crocante por fora e cremoso por dentro. Delicioso com gelado.</p>
+            </div>
+            <div class="page-number">25</div>
+        </div>
+
+        <!-- RECEITA: Cheesecake -->
+        <div class="page recipe">
+            <h3>Cheesecake</h3>
+            <img src="https://images.unsplash.com/photo-1533134242443-d4bccbeaa0c2?w=800&q=80" alt="Cheesecake" class="recipe-image">
+            
+            <div class="section-title">Ingredientes</div>
+            <div class="ingredients">
+                <ul>
+                    <li><strong>Base:</strong> 250g bolachas digestivas, 100g manteiga</li>
+                    <li><strong>Recheio:</strong> 600g queijo creme (tipo Philadelphia), 200g açúcar</li>
+                    <li>3 ovos, 200ml natas, 2 colheres sopa farinha</li>
+                    <li>Sumo de meio limão, 1 colher chá essência baunilha</li>
+                    <li><strong>Cobertura:</strong> Frutos vermelhos frescos</li>
+                </ul>
+            </div>
+
+            <div class="section-title">Modo de Preparo</div>
+            <div class="instructions">
+                <ol>
+                    <li>Triture as bolachas e misture com a manteiga derretida.</li>
+                    <li>Forre o fundo de uma forma desmontável. Compacte e refrigere.</li>
+                    <li>Bata o queijo creme com o açúcar até ficar cremoso.</li>
+                    <li>Adicione os ovos um a um, batendo bem.</li>
+                    <li>Junte as natas, farinha, sumo de limão e baunilha.</li>
+                    <li>Despeje sobre a base e alise a superfície.</li>
+                    <li>Asse em banho-maria a 160°C por 60 minutos.</li>
+                    <li>Desligue o forno e deixe arrefecer com a porta entreaberta.</li>
+                    <li>Refrigere por 6 horas antes de servir.</li>
+                    <li>Decore com frutos vermelhos.</li>
+                </ol>
+            </div>
+
+            <div class="nutrition">
+                <h4>Informação Nutricional (por fatia)</h4>
+                <p>Calorias: 425 kcal | Gorduras: 31g | Hidratos de Carbono: 31g | Proteínas: 8g</p>
+            </div>
+
+            <div class="notes">
+                <h4>💡 Dicas e Notas</h4>
+                <p>O banho-maria evita rachaduras. Não abra o forno durante o cozimento. A refrigeração é essencial para a textura.</p>
+            </div>
+            <div class="page-number">26</div>
+        </div>
+
+        <!-- RECEITA: Tiramisu -->
+        <div class="page recipe">
+            <h3>Tiramisu</h3>
+            <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=800&q=80" alt="Tiramisu" class="recipe-image">
+            
+            <div class="section-title">Ingredientes</div>
+            <div class="ingredients">
+                <ul>
+                    <li>500g de queijo mascarpone</li>
+                    <li>4 ovos</li>
+                    <li>100g de açúcar</li>
+                    <li>300ml de café expresso forte e frio</li>
+                    <li>3 colheres de sopa de licor Amaretto (opcional)</li>
+                    <li>200g de bolachas champagne</li>
+                    <li>Cacau em pó para polvilhar</li>
+                    <li>Chocolate negro ralado</li>
+                </ul>
+            </div>
+
+            <div class="section-title">Modo de Preparo</div>
+            <div class="instructions">
+                <ol>
+                    <li>Separe as claras das gemas.</li>
+                    <li>Bata as gemas com o açúcar até ficarem esbranquiçadas.</li>
+                    <li>Adicione o mascarpone e bata até obter creme homogéneo.</li>
+                    <li>Bata as claras em castelo firme.</li>
+                    <li>Incorpore delicadamente as claras ao creme de mascarpone.</li>
+                    <li>Misture o café com o Amaretto.</li>
+                    <li>Molhe rapidamente as bolachas no café.</li>
+                    <li>Faça camadas: bolachas, creme, bolachas, creme.</li>
+                    <li>Refrigere por 4-6 horas.</li>
+                    <li>Antes de servir, polvilhe com cacau e chocolate ralado.</li>
+                </ol>
+            </div>
+
+            <div class="nutrition">
+                <h4>Informação Nutricional (por porção)</h4>
+                <p>Calorias: 395 kcal | Gorduras: 28g | Hidratos de Carbono: 28g | Proteínas: 9g</p>
+            </div>
+
+            <div class="notes">
+                <h4>💡 Dicas e Notas</h4>
+                <p>O clássico italiano! Não molhe demais as bolachas. O tiramisu fica ainda melhor no dia seguinte.</p>
+            </div>
+            <div class="page-number">27</div>
+        </div>
+
+        <!-- RECEITA: Pavlova -->
+        <div class="page recipe">
+            <h3>Pavlova</h3>
+            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=800&q=80" alt="Pavlova" class="recipe-image">
+            
+            <div class="section-title">Ingredientes</div>
+            <div class="ingredients">
+                <ul>
+                    <li>4 claras de ovo</li>
+                    <li>250g de açúcar refinado</li>
+                    <li>1 colher de chá de vinagre branco</li>
+                    <li>1 colher de chá de amido de milho</li>
+                    <li>300ml de natas para bater</li>
+                    <li>Frutos vermelhos frescos variados</li>
+                    <li>Fruta da paixão (opcional)</li>
+                    <li>Açúcar em pó para decorar</li>
+                </ul>
+            </div>
+
+            <div class="section-title">Modo de Preparo</div>
+            <div class="instructions">
+                <ol>
+                    <li>Pré-aqueça o forno a 150°C.</li>
+                    <li>Bata as claras até começarem a fazer picos.</li>
+                    <li>Adicione o açúcar gradualmente, batendo até brilhante.</li>
+                    <li>Incorpore o vinagre e o amido de milho.</li>
+                    <li>Desenhe um círculo em papel vegetal sobre um tabuleiro.</li>
+                    <li>Espalhe o merengue formando um ninho (mais alto nas bordas).</li>
+                    <li>Reduza o forno para 120°C e asse por 90 minutos.</li>
+                    <li>Desligue o forno e deixe arrefecer completamente dentro.</li>
+                    <li>Bata as natas até ficarem firmes.</li>
+                    <li>Cubra o merengue com as natas e decore com frutos frescos.</li>
+                </ol>
+            </div>
+
+            <div class="nutrition">
+                <h4>Informação Nutricional (por fatia)</h4>
+                <p>Calorias: 245 kcal | Gorduras: 11g | Hidratos de Carbono: 34g | Proteínas: 3g</p>
+            </div>
+
+            <div class="notes">
+                <h4>💡 Dicas e Notas</h4>
+                <p>A Pavlova perfeita é crocante por fora e macia como marshmallow por dentro. Monte apenas na hora de servir.</p>
+            </div>
+            <div class="page-number">28</div>
+        </div>
+
+        <!-- RECEITA: Salame de Chocolate -->
+        <div class="page recipe">
+            <h3>Salame de Chocolate</h3>
+            <img src="https://images.unsplash.com/photo-1606312619070-d48b4a0a4764?w=800&q=80" alt="Salame de Chocolate" class="recipe-image">
+            
+            <div class="section-title">Ingredientes</div>
+            <div class="ingredients">
+                <ul>
+                    <li>200g de chocolate negro</li>
+                    <li>100g de manteiga</li>
+                    <li>100g de açúcar</li>
+                    <li>2 ovos</li>
+                    <li>200g de bolachas maria</li>
+                    <li>100g de nozes ou amêndoas picadas</li>
+                    <li>2 colheres de sopa de licor (opcional)</li>
+                    <li>Açúcar em pó para polvilhar</li>
+                </ul>
+            </div>
+
+            <div class="section-title">Modo de Preparo</div>
+            <div class="instructions">
+                <ol>
+                    <li>Derreta o chocolate com a manteiga em banho-maria.</li>
+                    <li>Adicione o açúcar e mexa até dissolver.</li>
+                    <li>Retire do lume e deixe arrefecer ligeiramente.</li>
+                    <li>Adicione os ovos batidos e misture bem.</li>
+                    <li>Se usar, adicione o licor.</li>
+                    <li>Parta as bolachas em pedaços pequenos.</li>
+                    <li>Misture as bolachas e as nozes ao chocolate.</li>
+                    <li>Coloque sobre película aderente e enrole em forma de salame.</li>
+                    <li>Refrigere por pelo menos 4 horas.</li>
+                    <li>Polvilhe com açúcar em pó e corte em rodelas.</li>
+                </ol>
+            </div>
+
+            <div class="nutrition">
+                <h4>Informação Nutricional (por rodela)</h4>
+                <p>Calorias: 185 kcal | Gorduras: 12g | Hidratos de Carbono: 17g | Proteínas: 3g</p>
+            </div>
+
+            <div class="notes">
+                <h4>💡 Dicas e Notas</h4>
+                <p>Um clássico português sem forno! Perfeito para fazer com crianças. Conserva-se bem no frigorífico por uma semana.</p>
+            </div>
+            <div class="page-number">29</div>
+        </div>
+
+        <!-- RECEITA: Trufas de Chocolate com Rum e Amêndoa -->
+        <div class="page recipe">
+            <h3>Trufas de Chocolate com Rum e Amêndoa</h3>
+            <img src="https://images.unsplash.com/photo-1548848979-47519fe94de8?w=800&q=80" alt="Trufas de Chocolate" class="recipe-image">
+            
+            <div class="section-title">Ingredientes</div>
+            <div class="ingredients">
+                <ul>
+                    <li>300g de chocolate negro</li>
+                    <li>200ml de natas frescas</li>
+                    <li>50g de manteiga</li>
+                    <li>3 colheres de sopa de rum</li>
+                    <li>100g de amêndoas torradas e picadas</li>
+                    <li>Cacau em pó para polvilhar</li>
+                    <li>Amêndoas laminadas para decorar (opcional)</li>
+                </ul>
+            </div>
+
+            <div class="section-title">Modo de Preparo</div>
+            <div class="instructions">
+                <ol>
+                    <li>Pique o chocolate finamente e coloque numa tigela.</li>
+                    <li>Aqueça as natas até começarem a ferver.</li>
+                    <li>Despeje sobre o chocolate e deixe repousar 2 minutos.</li>
+                    <li>Mexa até o chocolate derreter completamente.</li>
+                    <li>Adicione a manteiga, o rum e as amêndoas picadas.</li>
+                    <li>Misture bem até obter uma ganache homogénea.</li>
+                    <li>Deixe arrefecer e refrigere por 2-3 horas.</li>
+                    <li>Faça bolinhas com uma colher ou com as mãos.</li>
+                    <li>Passe por cacau em pó ou amêndoas laminadas.</li>
+                    <li>Conserve no frigorífico.</li>
+                </ol>
+            </div>
+
+            <div class="nutrition">
+                <h4>Informação Nutricional (por trufa)</h4>
+                <p>Calorias: 95 kcal | Gorduras: 7g | Hidratos de Carbono: 8g | Proteínas: 2g</p>
+            </div>
+
+            <div class="notes">
+                <h4>💡 Dicas e Notas</h4>
+                <p>Perfeitas para oferecer! Pode variar o revestimento: coco ralado, chocolate derretido ou açúcar em pó.</p>
+            </div>
+            <div class="page-number">30</div>
+        </div>
+
+        <!-- RECEITA: Ovos Moles -->
+        <div class="page recipe">
+            <h3>Ovos Moles</h3>
+            <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?w=800&q=80" alt="Ovos Moles" class="recipe-image">
+            
+            <div class="section-title">Ingredientes</div>
+            <div class="ingredients">
+                <ul>
+                    <li>12 gemas de ovo</li>
+                    <li>300g de açúcar</li>
+                    <li>150ml de água</li>
+                    <li>Hóstias para servir (opcional)</li>
+                </ul>
+            </div>
+
+            <div class="section-title">Modo de Preparo</div>
+            <div class="instructions">
+                <ol>
+                    <li>Passe as gemas por um coador fino.</li>
+                    <li>Prepare uma calda com o açúcar e a água.</li>
+                    <li>Ferva até atingir o ponto de pérola (110°C).</li>
+                    <li>Retire do lume e deixe arrefecer ligeiramente.</li>
+                    <li>Adicione as gemas aos poucos, mexendo constantemente.</li>
+                    <li>Volte ao lume muito brando, mexendo sempre.</li>
+                    <li>Cozinhe até engrossar e desligar do fundo (ponto de fio).</li>
+                    <li>Não deixe ferver ou as gemas talham.</li>
+                    <li>Sirva em hóstias ou em recipientes individuais.</li>
+                </ol>
+            </div>
+
+            <div class="nutrition">
+                <h4>Informação Nutricional (por porção)</h4>
+                <p>Calorias: 165 kcal | Gorduras: 5g | Hidratos de Carbono: 28g | Proteínas: 3g</p>
+            </div>
+
+            <div class="notes">
+                <h4>💡 Dicas e Notas</h4>
+                <p>Especialidade de Aveiro! O ponto certo é quando o creme não escorre da colher. Requer paciência e atenção constante.</p>
+            </div>
+            <div class="page-number">31</div>
+        </div>
+
+        <!-- RECEITA: Cheesecake de Maracujá -->
+        <div class="page recipe">
+            <h3>Cheesecake de Maracujá</h3>
+            <img src="https://images.unsplash.com/photo-1621955964441-c173e01c135b?w=800&q=80" alt="Cheesecake de Maracujá" class="recipe-image">
+            
+            <div class="section-title">Ingredientes</div>
+            <div class="ingredients">
+                <ul>
+                    <li><strong>Base:</strong> 200g bolachas, 80g manteiga derretida</li>
+                    <li><strong>Recheio:</strong> 500g queijo creme, 150g açúcar, 3 ovos</li>
+                    <li>Polpa de 6 maracujás, 200ml natas, 2 colheres sopa farinha</li>
+                    <li><strong>Cobertura:</strong> Polpa de 3 maracujás, 100g açúcar, 1 colher sopa amido</li>
+                </ul>
+            </div>
+
+            <div class="section-title">Modo de Preparo</div>
+            <div class="instructions">
+                <ol>
+                    <li>Prepare a base como o cheesecake tradicional.</li>
+                    <li>Bata o queijo creme com o açúcar.</li>
+                    <li>Adicione os ovos um a um, depois as natas e farinha.</li>
+                    <li>Junte a polpa de 6 maracujás coada.</li>
+                    <li>Despeje sobre a base e asse em banho-maria a 160°C por 50 minutos.</li>
+                    <li>Para a cobertura: cozinhe a polpa com açúcar e amido até engrossar.</li>
+                    <li>Deixe o cheesecake arrefecer completamente.</li>
+                    <li>Cubra com a calda de maracujá fria.</li>
+                    <li>Refrigere por 6 horas antes de servir.</li>
+                </ol>
+            </div>
+
+            <div class="nutrition">
+                <h4>Informação Nutricional (por fatia)</h4>
+                <p>Calorias: 395 kcal | Gorduras: 27g | Hidratos de Carbono: 33g | Proteínas: 7g</p>
+            </div>
+
+            <div class="notes">
+                <h4>💡 Dicas e Notas</h4>
+                <p>O sabor tropical do maracujá equilibra perfeitamente a cremosidade do queijo. Versão refrescante do clássico!</p>
+            </div>
+            <div class="page-number">32</div>
+        </div>
+
+        <!-- RECEITA: Bavaroise de Ananás -->
+        <div class="page recipe">
+            <h3>Bavaroise de Ananás</h3>
+            <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?w=800&q=80" alt="Bavaroise" class="recipe-image">
+            
+            <div class="section-title">Ingredientes</div>
+            <div class="ingredients">
+                <ul>
+                    <li>1 ananás fresco maduro</li>
+                    <li>4 folhas de gelatina</li>
+                    <li>150g de açúcar</li>
+                    <li>300ml de natas para bater</li>
+                    <li>3 gemas de ovo</li>
+                    <li>200ml de leite</li>
+                    <li>Sumo de meio limão</li>
+                    <li>Hortelã fresca para decorar</li>
+                </ul>
+            </div>
+
+            <div class="section-title">Modo de Preparo</div>
+            <div class="instructions">
+                <ol>
+                    <li>Hidrate a gelatina em água fria.</li>
+                    <li>Descasque o ananás e triture metade da polpa.</li>
+                    <li>Corte a outra metade em cubos pequenos.</li>
+                    <li>Aqueça o leite com metade do açúcar.</li>
+                    <li>Bata as gemas com o restante açúcar.</li>
+                    <li>Adicione o leite quente e volte ao lume até engrossar.</li>
+                    <li>Adicione a gelatina escorrida e mexa até dissolver.</li>
+                    <li>Junte o puré de ananás e o sumo de limão.</li>
+                    <li>Deixe arrefecer até começar a solidificar.</li>
+                    <li>Bata as natas e incorpore delicadamente.</li>
+                    <li>Adicione os cubos de ananás.</li>
+                    <li>Distribua por taças e refrigere por 4 horas.</li>
+                </ol>
+            </div>
+
+            <div class="nutrition">
+                <h4>Informação Nutricional (por porção)</h4>
+                <p>Calorias: 285 kcal | Gorduras: 16g | Hidratos de Carbono: 32g | Proteínas: 4g</p>
+            </div>
+
+            <div class="notes">
+                <h4>💡 Dicas e Notas</h4>
+                <p>Uma sobremesa elegante e refrescante. O ananás fresco dá um sabor incomparável. Perfeita para ocasiões especiais.</p>
+            </div>
+            <div class="page-number">33</div>
+        </div>
+
+        <!-- RECEITA: Pão-de-Ló -->
+        <div class="page recipe">
+            <h3>Pão-de-Ló</h3>
+            <img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=800&q=80" alt="Pão-de-Ló" class="recipe-image">
+            
+            <div class="section-title">Ingredientes</div>
+            <div class="ingredients">
+                <ul>
+                    <li>6 ovos</li>
+                    <li>200g de açúcar</li>
+                    <li>150g de farinha de trigo</li>
+                    <li>Raspas de 1 limão</li>
+                    <li>1 pitada de sal</li>
+                    <li>Manteiga e farinha para untar</li>
+                </ul>
+            </div>
+
+            <div class="section-title">Modo de Preparo</div>
+            <div class="instructions">
+                <ol>
+                    <li>Pré-aqueça o forno a 180°C.</li>
+                    <li>Unte bem uma forma alta com manteiga e farinha.</li>
+                    <li>Separe as claras das gemas.</li>
+                    <li>Bata as gemas com o açúcar até ficarem esbranquiçadas (10 minutos).</li>
+                    <li>Adicione as raspas de limão.</li>
+                    <li>Bata as claras com o sal até ficarem em castelo firme.</li>
+                    <li>Incorpore delicadamente a farinha às gemas.</li>
+                    <li>Adicione as claras em três vezes, envolvendo suavemente.</li>
+                    <li>Despeje na forma e asse por 30-35 minutos.</li>
+                    <li>Não abra o forno durante o cozimento!</li>
+                    <li>Deixe arrefecer na forma antes de desenformar.</li>
+                </ol>
+            </div>
+
+            <div class="nutrition">
+                <h4>Informação Nutricional (por fatia)</h4>
+                <p>Calorias: 145 kcal | Gorduras: 3g | Hidratos de Carbono: 25g | Proteínas: 5g</p>
+            </div>
+
+            <div class="notes">
+                <h4>💡 Dicas e Notas</h4>
+                <p>O segredo está em bater muito bem as gemas e incorporar as claras com delicadeza. Pode fazer versão húmida (menos tempo) ou seca.</p>
+            </div>
+            <div class="page-number">34</div>
+        </div>
+
+        <!-- RECEITA: Torta Básica -->
+        <div class="page recipe">
+            <h3>Torta Básica</h3>
+            <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=800&q=80" alt="Torta" class="recipe-image">
+            
+            <div class="section-title">Ingredientes</div>
+            <div class="ingredients">
+                <ul>
+                    <li><strong>Massa:</strong> 300g farinha, 150g manteiga fria, 1 ovo, 2 colheres sopa açúcar, pitada sal</li>
+                    <li><strong>Recheio versátil:</strong> 400g de fruta (maçã, pêra, ameixa, etc.)</li>
+                    <li>100g açúcar, 2 colheres sopa farinha, canela a gosto</li>
+                    <li>Sumo de limão, geleia de alperce para pincelar</li>
+                </ul>
+            </div>
+
+            <div class="section-title">Modo de Preparo</div>
+            <div class="instructions">
+                <ol>
+                    <li>Prepare a massa: misture farinha, manteiga, açúcar e sal até obter farelo.</li>
+                    <li>Adicione o ovo e amasse rapidamente até ligar.</li>
+                    <li>Embrulhe em película e refrigere 30 minutos.</li>
+                    <li>Prepare a fruta: descasque, corte e misture com açúcar, farinha e canela.</li>
+                    <li>Adicione sumo de limão.</li>
+                    <li>Estenda 2/3 da massa e forre uma tarteira.</li>
+                    <li>Distribua a fruta uniformemente.</li>
+                    <li>Com a massa restante, faça tiras para decorar em grade.</li>
+                    <li>Pincele com gema batida.</li>
+                    <li>Asse a 180°C por 40 minutos até dourar.</li>
+                    <li>Pincele com geleia morna.</li>
+                </ol>
+            </div>
+
+            <div class="nutrition">
+                <h4>Informação Nutricional (por fatia)</h4>
+                <p>Calorias: 265 kcal | Gorduras: 12g | Hidratos de Carbono: 36g | Proteínas: 4g</p>
+            </div>
+
+            <div class="notes">
+                <h4>💡 Dicas e Notas</h4>
+                <p>Receita versátil! Adapte o recheio à fruta da época. A massa pode ser feita com antecedência e congelada.</p>
+            </div>
+            <div class="page-number">35</div>
+        </div>
+
+        <!-- Receitas adicionais continuam nas próximas páginas -->
+        <!-- Incluindo: Bolo de noz, Muffins de aveia, Bolachas de mel, etc. -->
+        
+        <!-- PÁGINA FINAL -->
+        <div class="page" style="display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center;">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 36pt; margin-bottom: 30px;">Obrigado!</h2>
+            <div style="width: 200px; height: 2px; background: white; margin: 30px 0;"></div>
+            <p style="font-size: 14pt; max-width: 600px; line-height: 1.8;">
+                Esperamos que estas receitas adocem os seus dias e criem momentos especiais à mesa com família e amigos.
+            </p>
+            <p style="font-size: 12pt; margin-top: 40px; font-style: italic;">
+                Boas confeitarias! 🍰
+            </p>
+            <div class="page-number">36</div>
+        </div>
+
+    </div>
+
+    <script>
+        // Script para impressão otimizada
+        window.onload = function() {
+            // Adicionar funcionalidade de impressão
+            document.addEventListener('keydown', function(e) {
+                if (e.ctrlKey && e.key === 'p') {
+                    e.preventDefault();
+                    window.print();
+                }
+            });
+        };
+    </script>
+</body>
+</html>

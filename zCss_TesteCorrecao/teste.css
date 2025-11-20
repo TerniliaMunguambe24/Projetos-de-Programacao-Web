@@ -1,0 +1,48 @@
+#cabecalho{
+    position:relative;
+    height:150px;
+    border:2px dotted blue;
+}
+
+#cabecalho #titulo{
+    margin-top:0px ;
+    margin-left:30px;
+}
+#cabecalho #barra-pesquisa{
+    position:absolute;
+    top: 2cqmin;
+    right:50px;
+   
+}
+#cabecalho #menu{
+    position:absolute;
+    bottom:0;
+    width:100%;
+}
+#cabecalho #menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+#cabecalho #menu ul li {
+    margin:0 20px 0 20px;
+}
+#cabecalho hr{
+    position: absolute;
+    bottom:0;
+    width: 100%;
+}
+#conteudo{
+    padding:50px;
+}
+#conteudo #destaques .noticia{
+    display:inline-block;
+}
+#conteudo #destaques .noticia{
+    width: 50%;
+    float: left;
+    border:2px dashed rgb(32, 32, 157);
+}
+#conteudo #tecnologias{
+    clear:both;
+}

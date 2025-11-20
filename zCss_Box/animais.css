@@ -1,0 +1,30 @@
+body{
+    background-color: rgb(228, 211, 187);
+}
+h1{
+    color:brown;
+    background-color: burlywood;
+    height: 300px;
+    width: 1920px;
+    border:15px dotted brown;
+    border-top: 15px solid brown;
+    border-bottom:15px dashed brown;
+    border-left:10px dotted brown;
+    border-right:10px ridge brown; 
+}
+h2{
+    background-color: rgb(158, 109, 45);
+    height:9cqh;
+    width:1000 px;
+    margin-top:50px;
+    margin-bottom:50px;
+    margin-left:20px;
+    margin-right:20px;
+}
+
+ul{
+    background-color: rgb(232, 193, 143);
+    height: 100px;
+    width: 1000px;
+    overflow:scroll;
+}

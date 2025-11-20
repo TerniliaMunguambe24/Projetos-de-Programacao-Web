@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flor CSS</title>
+  <link rel="stylesheet" type="text/css" href="flor.css">
+  <style>
+    body {
+      background: linear-gradient(to bottom, #fceabb, #f8b500);
+      height: 100vh;
+      margin: 0;
+      overflow: hidden ;
+      position: relative;
+    }
+
+    .flower {
+      position: absolute;
+      
+      left: 50%;
+      transform-origin: bottom center;
+      z-index: 10;
+      --fl-speed: 15.8s;
+      width: 60px;
+      height: 120px;
+      background: rgb(255, 176, 189);
+      border-radius: 50% 50% 0 0;
+      transform: rotate(0deg);
+      animation: sway var(--fl-speed) infinite alternate ease-in-out;
+    }
+    .flor {
+      position: absolute;
+      
+      left: 50%;
+      transform-origin: bottom center;
+      z-index: 10;
+      --fl-speed: 0.8s;
+      width: 60px;
+      height: 120px;
+      background: rgb(255, 143, 161);
+      border-radius: 50% 50% 0 0;
+      transform: rotate(0deg);
+      animation: sway var(--fl-speed) infinite alternate ease-in-out;
+    }
+
+    @keyframes sway {
+      from { transform: rotate(-1000deg); }
+      to { transform: rotate(1000deg); }
+    }
+    
+  </style>
+</head>
+<body>
+  <h1> Loading flower</h1>
+  <div class="flor"></div>
+  <div class="flower"></div>
+</body>
+</html>

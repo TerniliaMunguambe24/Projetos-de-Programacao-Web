@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Molhos e Temperos Gourmet</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Crimson Text', serif; line-height: 1.6; color: #333; background: #f8f5f0; }
+        .page { width: 210mm; min-height: 297mm; margin: 20px auto; background: white; box-shadow: 0 0 20px rgba(0,0,0,0.1); position: relative; page-break-after: always; padding: 40px 50px 60px; }
+        .page-number { position: absolute; bottom: 20px; right: 50px; font-family: 'Montserrat', sans-serif; font-size: 11px; color: #8b7355; }
+        .header { text-align: center; border-bottom: 2px solid #d4a574; padding-bottom: 10px; margin-bottom: 30px; font-family: 'Montserrat', sans-serif; font-size: 10px; color: #8b7355; text-transform: uppercase; letter-spacing: 2px; }
+        .cover { background: linear-gradient(135deg, #8b7355 0%, #d4a574 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; padding: 80px 50px; }
+        .cover h1 { font-family: 'Montserrat', sans-serif; font-size: 48px; font-weight: 700; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 3px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .cover .subtitle { font-size: 24px; font-style: italic; margin-bottom: 40px; opacity: 0.9; }
+        .cover .author { font-family: 'Montserrat', sans-serif; font-size: 16px; margin-top: 60px; opacity: 0.8; letter-spacing: 2px; }
+        .toc { padding: 40px 0; }
+        .toc h2 { font-family: 'Montserrat', sans-serif; font-size: 36px; color: #8b7355; margin-bottom: 40px; text-align: center; text-transform: uppercase; letter-spacing: 2px; }
+        .toc-section { margin-bottom: 30px; }
+        .toc-section h3 { font-family: 'Montserrat', sans-serif; font-size: 20px; color: #d4a574; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 1px solid #d4a574; }
+        .toc-item { display: flex; justify-content: space-between; padding: 8px 0; font-size: 16px; border-bottom: 1px dotted #ddd; }
+        .toc-item:hover { background: #f8f5f0; }
+        .toc-item .name { flex: 1; }
+        .toc-item .page { color: #8b7355; font-weight: 600; }
+        .section-page { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(to bottom, #f8f5f0 0%, white 100%); }
+        .section-page h2 { font-family: 'Montserrat', sans-serif; font-size: 42px; color: #8b7355; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 3px; }
+        .section-page .divider { width: 200px; height: 3px; background: linear-gradient(to right, transparent, #d4a574, transparent); margin: 20px 0; }
+        .section-page .icon { font-size: 100px; color: #d4a574; margin: 40px 0; }
+        .recipe { margin-bottom: 40px; }
+        .recipe-title { font-family: 'Montserrat', sans-serif; font-size: 28px; color: #8b7355; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #d4a574; }
+        .recipe-image { width: 100%; height: 300px; object-fit: cover; border-radius: 10px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .recipe-section { margin-bottom: 25px; }
+        .recipe-section h3 { font-family: 'Montserrat', sans-serif; font-size: 18px; color: #d4a574; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; }
+        .ingredients-list { list-style: none; padding-left: 0; }
+        .ingredients-list li { padding: 6px 0 6px 25px; position: relative; font-size: 15px; }
+        .ingredients-list li:before { content: "◆"; position: absolute; left: 0; color: #d4a574; }
+        .instructions { line-height: 1.8; font-size: 15px; }
+        .instructions p { margin-bottom: 12px; }
+        .nutrition-info { background: #f8f5f0; padding: 15px; border-radius: 8px; margin-top: 20px; font-size: 14px; }
+        .nutrition-info h4 { font-family: 'Montserrat', sans-serif; color: #8b7355; margin-bottom: 10px; font-size: 16px; }
+        .tips-box { background: linear-gradient(135deg, #fff9f0 0%, #f8f5f0 100%); border-left: 4px solid #d4a574; padding: 20px; margin-top: 25px; border-radius: 0 8px 8px 0; }
+        .tips-box h4 { font-family: 'Montserrat', sans-serif; color: #8b7355; margin-bottom: 10px; font-size: 16px; display: flex; align-items: center; }
+        .tips-box h4:before { content: "💡"; margin-right: 10px; font-size: 20px; }
+        .tips-box p { font-size: 14px; font-style: italic; line-height: 1.6; }
+        .notes-space { margin-top: 30px; padding: 20px; border: 2px dashed #d4a574; border-radius: 8px; min-height: 100px; background: #fff; }
+        .notes-space h4 { font-family: 'Montserrat', sans-serif; color: #8b7355; margin-bottom: 15px; font-size: 16px; }
+        .notes-lines { display: flex; flex-direction: column; gap: 15px; }
+        .notes-line { border-bottom: 1px solid #ddd; min-height: 20px; }
+        @media print { .page { margin: 0; box-shadow: none; } }
+    </style>
+</head>
+<body>
+
+    <div class="page cover">
+        <div class="icon">🍴</div>
+        <h1>Molhos & Temperos</h1>
+        <div class="subtitle">Receitas Gourmet para Elevar seus Pratos</div>
+        <div style="margin-top: 60px; font-size: 18px; opacity: 0.9;">
+            <p>✦ Molhos Salgados ✦</p>
+            <p>✦ Caldos Concentrados ✦</p>
+            <p>✦ Molhos Doces ✦</p>
+        </div>
+        <div class="author">COLEÇÃO CHEF MARISA</div>
+    </div>
+
+    <div class="page section-page">
+        <div class="icon">🥄</div>
+        <h2>Molhos Salgados</h2>
+        <div class="divider"></div>
+        <p style="margin-top: 20px; font-size: 18px; color: #666; max-width: 600px;">
+            Descubra sabores intensos e versáteis para acompanhar carnes, massas, saladas e muito mais.
+        </p>
+        <div class="page-number">3</div>
+    </div>
+
+    <!-- AQUI COMEÇAM TODAS AS RECEITAS, UMA POR PÁGINA -->
+<!-- RECEITA 1: Molho para Bolonhesa -->
+<div class="page recipe">
+    <div class="recipe-title">Molho para Bolonhesa</div>
+    <img class="recipe-image" src="https://images.unsplash.com/photo-1598866594230-a7c12756260f?w=800&q=80" alt="Molho para Bolonhesa">
+    <div class="recipe-section">
+        <h3>Ingredientes</h3>
+        <ul class="ingredients-list">
+            <li>500g de carne moída</li>
+            <li>1 cebola média picada</li>
+            <li>2 dentes de alho picados</li>
+            <li>400g de tomate pelado</li>
+            <li>2 colheres de sopa de azeite</li>
+            <li>Sal e pimenta a gosto</li>
+            <li>Ervas frescas (manjericão ou orégano) a gosto</li>
+        </ul>
+    </div>
+    <div class="recipe-section">
+        <h3>Modo de Preparo</h3>
+        <div class="instructions">
+            <p>Aqueça o azeite em uma panela e refogue a cebola e o alho até dourarem.</p>
+            <p>Adicione a carne moída e cozinhe até perder a cor crua.</p>
+            <p>Acrescente os tomates pelados, tempere com sal, pimenta e deixe cozinhar em fogo baixo por 30 minutos.</p>
+            <p>Finalize com as ervas frescas e sirva com massa ou arroz.</p>
+        </div>
+    </div>
+    <div class="tips-box">
+        <h4>Dicas do Chef</h4>
+        <p>Se quiser um molho mais encorpado, deixe cozinhar por mais tempo e adicione uma colher de extrato de tomate.</p>
+    </div>
+    <div class="notes-space">
+        <h4>Notas</h4>
+        <div class="notes-lines">
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+        </div>
+    </div>
+    <div class="page-number">5</div>
+</div>
+
+<!-- RECEITA 2: Guacamole -->
+<div class="page recipe">
+    <div class="recipe-title">Guacamole</div>
+    <img class="recipe-image" src="guacamole.jpg" alt="Guacamole">
+    <div class="recipe-section">
+        <h3>Ingredientes</h3>
+        <ul class="ingredients-list">
+            <li>2 abacates maduros</li>
+            <li>1 tomate picado</li>
+            <li>1/2 cebola roxa picada</li>
+            <li>Suco de 1 limão</li>
+            <li>Coentro a gosto</li>
+            <li>Sal e pimenta a gosto</li>
+        </ul>
+    </div>
+    <div class="recipe-section">
+        <h3>Modo de Preparo</h3>
+        <div class="instructions">
+            <p>Amasse os abacates até formar um creme.</p>
+            <p>Adicione o tomate, cebola, coentro e o suco de limão.</p>
+            <p>Tempere com sal e pimenta, misture bem e sirva imediatamente.</p>
+        </div>
+    </div>
+    <div class="tips-box">
+        <h4>Dicas do Chef</h4>
+        <p>Para evitar que escureça, mantenha a pedra do abacate dentro do guacamole até a hora de servir.</p>
+    </div>
+    <div class="notes-space">
+        <h4>Notas</h4>
+        <div class="notes-lines">
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+        </div>
+    </div>
+    <div class="page-number">6</div>
+</div>
+
+<!-- RECEITA 3: Maionese -->
+<div class="page recipe">
+    <div class="recipe-title">Maionese</div>
+    <img class="recipe-image" src="maionese.jpg" alt="Maionese">
+    <div class="recipe-section">
+        <h3>Ingredientes</h3>
+        <ul class="ingredients-list">
+            <li>1 ovo inteiro</li>
+            <li>1 colher de chá de mostarda</li>
+            <li>200 ml de óleo vegetal</li>
+            <li>Suco de 1/2 limão</li>
+            <li>Sal a gosto</li>
+        </ul>
+    </div>
+    <div class="recipe-section">
+        <h3>Modo de Preparo</h3>
+        <div class="instructions">
+            <p>Bata o ovo com a mostarda e o sal.</p>
+            <p>Adicione o óleo lentamente, em fio, batendo constantemente até engrossar.</p>
+            <p>Finalize com o suco de limão e ajuste o sal.</p>
+        </div>
+    </div>
+    <div class="tips-box">
+        <h4>Dicas do Chef</h4>
+        <p>Use óleo neutro e ovos em temperatura ambiente para evitar que a maionese talhe.</p>
+    </div>
+    <div class="notes-space">
+        <h4>Notas</h4>
+        <div class="notes-lines">
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+        </div>
+    </div>
+    <div class="page-number">7</div>
+</div>
+
+<!-- RECEITA 4: Molho frio de tomate com manjericão -->
+<div class="page recipe">
+    <div class="recipe-title">Molho frio de tomate com manjericão</div>
+    <img class="recipe-image" src="tomateManjericao.jpg" alt="Molho frio de tomate com manjericão">
+    <div class="recipe-section">
+        <h3>Ingredientes</h3>
+        <ul class="ingredients-list">
+            <li>4 tomates maduros</li>
+            <li>1 dente de alho</li>
+            <li>Folhas de manjericão a gosto</li>
+            <li>2 colheres de sopa de azeite</li>
+            <li>Sal e pimenta a gosto</li>
+        </ul>
+    </div>
+    <div class="recipe-section">
+        <h3>Modo de Preparo</h3>
+        <div class="instructions">
+            <p>Bata todos os ingredientes no liquidificador até obter um molho homogêneo.</p>
+            <p>Refrigere por pelo menos 30 minutos antes de servir.</p>
+        </div>
+    </div>
+    <div class="tips-box">
+        <h4>Dicas do Chef</h4>
+        <p>Sirva com massas frias ou como molho de saladas.</p>
+    </div>
+    <div class="notes-space">
+        <h4>Notas</h4>
+        <div class="notes-lines">
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+        </div>
+    </div>
+    <div class="page-number">8</div>
+</div>
+
+<!-- RECEITA 5: Molho béchamel -->
+<div class="page recipe">
+    <div class="recipe-title">Molho Béchemel</div>
+    <img class="recipe-image" src="bechamel.jpg" alt="Molho Béchemel">
+    <div class="recipe-section">
+        <h3>Ingredientes</h3>
+        <ul class="ingredients-list">
+            <li>50g de manteiga</li>
+            <li>50g de farinha de trigo</li>
+            <li>500ml de leite</li>
+            <li>Sal, pimenta e noz-moscada a gosto</li>
+        </ul>
+    </div>
+    <div class="recipe-section">
+        <h3>Modo de Preparo</h3>
+        <div class="instructions">
+            <p>Derreta a manteiga em uma panela e adicione a farinha, mexendo até formar um roux.</p>
+            <p>Acrescente o leite aos poucos, mexendo constantemente até engrossar.</p>
+            <p>Tempere com sal, pimenta e noz-moscada.</p>
+        </div>
+    </div>
+    <div class="tips-box">
+        <h4>Dicas do Chef</h4>
+        <p>Para um molho mais cremoso, use leite morno.</p>
+    </div>
+    <div class="notes-space">
+        <h4>Notas</h4>
+        <div class="notes-lines">
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+        </div>
+    </div>
+    <div class="page-number">9</div>
+</div>
+<!-- RECEITA 6: Vinagrete de frutos vermelhos com hortelã -->
+<div class="page recipe">
+    <div class="recipe-title">Vinagrete de Frutos Vermelhos com Hortelã</div>
+    <img class="recipe-image" src="redVinagrete.jpg" alt="Vinagrete de Frutos Vermelhos com Hortelã">
+    <div class="recipe-section">
+        <h3>Ingredientes</h3>
+        <ul class="ingredients-list">
+            <li>100g de morangos</li>
+            <li>50g de framboesas</li>
+            <li>1 colher de sopa de vinagre balsâmico</li>
+            <li>2 colheres de sopa de azeite</li>
+            <li>Folhas de hortelã a gosto</li>
+            <li>Sal e pimenta a gosto</li>
+        </ul>
+    </div>
+    <div class="recipe-section">
+        <h3>Modo de Preparo</h3>
+        <div class="instructions">
+            <p>Amasse levemente os frutos vermelhos.</p>
+            <p>Adicione vinagre, azeite, sal e pimenta e misture bem.</p>
+            <p>Finalize com folhas de hortelã e sirva frio.</p>
+        </div>
+    </div>
+    <div class="tips-box">
+        <h4>Dicas do Chef</h4>
+        <p>Ideal para saladas verdes ou pratos com queijos leves.</p>
+    </div>
+    <div class="notes-space">
+        <h4>Notas</h4>
+        <div class="notes-lines">
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+        </div>
+    </div>
+    <div class="page-number">10</div>
+</div>
+
+<!-- RECEITA 7: Molho fresco de iogurte com queijo e aneto -->
+<div class="page recipe">
+    <div class="recipe-title">Molho Fresco de Iogurte com Queijo e Aneto</div>
+    <img class="recipe-image" src="Iogurte.jpg" alt="Molho Fresco de Iogurte com Queijo e Aneto">
+    <div class="recipe-section">
+        <h3>Ingredientes</h3>
+        <ul class="ingredients-list">
+            <li>200g de iogurte natural</li>
+            <li>50g de queijo fresco esfarelado</li>
+            <li>1 colher de sopa de aneto fresco picado</li>
+            <li>Sal e pimenta a gosto</li>
+        </ul>
+    </div>
+    <div class="recipe-section">
+        <h3>Modo de Preparo</h3>
+        <div class="instructions">
+            <p>Misture todos os ingredientes até ficar homogêneo.</p>
+            <p>Sirva gelado sobre saladas ou peixes grelhados.</p>
+        </div>
+    </div>
+    <div class="tips-box">
+        <h4>Dicas do Chef</h4>
+        <p>Use iogurte natural cremoso para melhor textura.</p>
+    </div>
+    <div class="notes-space">
+        <h4>Notas</h4>
+        <div class="notes-lines">
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+        </div>
+    </div>
+    <div class="page-number">11</div>
+</div>
+
+<!-- RECEITA 8: Molho Béarnaise -->
+<div class="page recipe">
+    <div class="recipe-title">Molho Béarnaise</div>
+    <img class="recipe-image" src="bearnaise.jpg" alt="Molho Béarnaise">
+    <div class="recipe-section">
+        <h3>Ingredientes</h3>
+        <ul class="ingredients-list">
+            <li>3 gemas de ovo</li>
+            <li>100g de manteiga derretida</li>
+            <li>2 colheres de sopa de vinagre de vinho branco</li>
+            <li>2 colheres de sopa de estragão fresco picado</li>
+            <li>Sal e pimenta a gosto</li>
+        </ul>
+    </div>
+    <div class="recipe-section">
+        <h3>Modo de Preparo</h3>
+        <div class="instructions">
+            <p>Bata as gemas em banho-maria e adicione a manteiga derretida aos poucos.</p>
+            <p>Acrescente o vinagre, estragão, sal e pimenta.</p>
+            <p>Sirva quente sobre carnes grelhadas.</p>
+        </div>
+    </div>
+    <div class="tips-box">
+        <h4>Dicas do Chef</h4>
+        <p>Não aqueça demais para evitar que o molho talhe.</p>
+    </div>
+    <div class="notes-space">
+        <h4>Notas</h4>
+        <div class="notes-lines">
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+        </div>
+    </div>
+    <div class="page-number">12</div>
+</div>
+
+<!-- RECEITA 9: Molho Holandês -->
+<div class="page recipe">
+    <div class="recipe-title">Molho Holandês</div>
+    <img class="recipe-image" src="holandes.jpg" alt="Molho Holandês">
+    <div class="recipe-section">
+        <h3>Ingredientes</h3>
+        <ul class="ingredients-list">
+            <li>3 gemas de ovo</li>
+            <li>100g de manteiga clarificada</li>
+            <li>1 colher de sopa de suco de limão</li>
+            <li>Sal e pimenta a gosto</li>
+        </ul>
+    </div>
+    <div class="recipe-section">
+        <h3>Modo de Preparo</h3>
+        <div class="instructions">
+            <p>Bata as gemas em banho-maria, adicione a manteiga clarificada aos poucos.</p>
+            <p>Acrescente o suco de limão e tempere com sal e pimenta.</p>
+            <p>Sirva com ovos benedict ou peixes grelhados.</p>
+        </div>
+    </div>
+    <div class="tips-box">
+        <h4>Dicas do Chef</h4>
+        <p>Use manteiga clarificada para evitar que o molho se separe.</p>
+    </div>
+    <div class="notes-space">
+        <h4>Notas</h4>
+        <div class="notes-lines">
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+        </div>
+    </div>
+    <div class="page-number">13</div>
+</div>
+
+<!-- RECEITA 10: Molho Pesto com Noz -->
+<div class="page recipe">
+    <div class="recipe-title">Molho Pesto com Noz</div>
+    <img class="recipe-image" src="pesto.png" alt="Molho Pesto com Noz">
+    <div class="recipe-section">
+        <h3>Ingredientes</h3>
+        <ul class="ingredients-list">
+            <li>50g de folhas de manjericão</li>
+            <li>30g de nozes</li>
+            <li>50g de queijo parmesão ralado</li>
+            <li>100ml de azeite</li>
+            <li>1 dente de alho</li>
+            <li>Sal a gosto</li>
+        </ul>
+    </div>
+    <div class="recipe-section">
+        <h3>Modo de Preparo</h3>
+        <div class="instructions">
+            <p>Bata todos os ingredientes no processador até formar uma pasta homogênea.</p>
+            <p>Ajuste o sal e sirva com massas ou torradas.</p>
+        </div>
+    </div>
+    <div class="tips-box">
+        <h4>Dicas do Chef</h4>
+        <p>Para um sabor mais intenso, torre levemente as nozes antes de triturar.</p>
+    </div>
+    <div class="notes-space">
+        <h4>Notas</h4>
+        <div class="notes-lines">
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+        </div>
+    </div>
+    <div class="page-number">14</div>
+</div>
+
+<!-- RECEITA 11: Caldo concentrado de vaca -->
+<div class="page recipe">
+    <div class="recipe-title">Caldo Concentrado de Vaca</div>
+    <img class="recipe-image" src="caldoVaca.jpg" alt="Caldo Concentrado de Vaca">
+    <div class="recipe-section">
+        <h3>Ingredientes</h3>
+        <ul class="ingredients-list">
+            <li>500g de ossos de vaca</li>
+            <li>2 cenouras picadas</li>
+            <li>1 cebola picada</li>
+            <li>2 talos de aipo</li>
+            <li>Sal a gosto</li>
+            <li>1,5 L de água</li>
+        </ul>
+    </div>
+    <div class="recipe-section">
+        <h3>Modo de Preparo</h3>
+        <div class="instructions">
+            <p>Cozinhe os ossos em água fervente, adicione legumes e deixe ferver por 3 horas.</p>
+            <p>Coe e conserve o caldo concentrado na geladeira ou freezer.</p>
+        </div>
+    </div>
+    <div class="tips-box">
+        <h4>Dicas do Chef</h4>
+        <p>Use ossos com tutano para um caldo mais saboroso.</p>
+    </div>
+    <div class="notes-space">
+        <h4>Notas</h4>
+        <div class="notes-lines">
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+        </div>
+    </div>
+    <div class="page-number">15</div>
+</div>
+
+<!-- RECEITA 12: Caldo concentrado de legumes -->
+<div class="page recipe">
+    <div class="recipe-title">Caldo Concentrado de Legumes</div>
+    <img class="recipe-image" src="legumes.jpg" alt="Caldo Concentrado de Legumes">
+    <div class="recipe-section">
+        <h3>Ingredientes</h3>
+        <ul class="ingredients-list">
+            <li>2 cenouras picadas</li>
+            <li>1 cebola picada</li>
+            <li>2 talos de aipo</li>
+            <li>1 alho-poró</li>
+            <li>1,5 L de água</li>
+            <li>Sal a gosto</li>
+        </ul>
+    </div>
+    <div class="recipe-section">
+        <h3>Modo de Preparo</h3>
+        <div class="instructions">
+            <p>Cozinhe todos os legumes em água fervente por 1 hora.</p>
+            <p>Coe e conserve o caldo concentrado na geladeira ou freezer.</p>
+        </div>
+    </div>
+    <div class="tips-box">
+        <h4>Dicas do Chef</h4>
+        <p>Adicione ervas frescas para um sabor mais intenso.</p>
+    </div>
+    <div class="notes-space">
+        <h4>Notas</h4>
+        <div class="notes-lines">
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+        </div>
+    </div>
+    <div class="page-number">16</div>
+</div>
+<!-- RECEITA 13: Caldo concentrado de frango -->
+<div class="page recipe">
+    <div class="recipe-title">Caldo Concentrado de Frango</div>
+    <img class="recipe-image" src="caldoFrango.jpg" alt="Caldo Concentrado de Frango">
+    <div class="recipe-section">
+        <h3>Ingredientes</h3>
+        <ul class="ingredients-list">
+            <li>1 frango inteiro ou 500g de ossos de frango</li>
+            <li>2 cenouras picadas</li>
+            <li>1 cebola picada</li>
+            <li>2 talos de aipo</li>
+            <li>Sal a gosto</li>
+            <li>1,5 L de água</li>
+        </ul>
+    </div>
+    <div class="recipe-section">
+        <h3>Modo de Preparo</h3>
+        <div class="instructions">
+            <p>Cozinhe o frango ou ossos em água fervente.</p>
+            <p>Adicione legumes, cozinhe em fogo baixo por 2 a 3 horas.</p>
+            <p>Coe e conserve o caldo concentrado na geladeira ou freezer.</p>
+        </div>
+    </div>
+    <div class="tips-box">
+        <h4>Dicas do Chef</h4>
+        <p>Retire a gordura superficial antes de armazenar para um caldo mais leve.</p>
+    </div>
+    <div class="notes-space">
+        <h4>Notas</h4>
+        <div class="notes-lines">
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+        </div>
+    </div>
+    <div class="page-number">17</div>
+</div>
+
+<!-- RECEITA 14: Molho de Morango com Limão e Hortelã -->
+<div class="page recipe">
+    <div class="recipe-title">Molho de Morango com Limão e Hortelã</div>
+    <img class="recipe-image" src="morango.jpg" alt="Molho de Morango com Limão e Hortelã">
+    <div class="recipe-section">
+        <h3>Ingredientes</h3>
+        <ul class="ingredients-list">
+            <li>300g de morangos frescos</li>
+            <li>2 colheres de sopa de açúcar</li>
+            <li>Suco de 1 limão</li>
+            <li>Folhas de hortelã a gosto</li>
+        </ul>
+    </div>
+    <div class="recipe-section">
+        <h3>Modo de Preparo</h3>
+        <div class="instructions">
+            <p>Higienize e corte os morangos.</p>
+            <p>Misture com açúcar, suco de limão e hortelã picada.</p>
+            <p>Sirva como cobertura de sobremesas ou sorvetes.</p>
+        </div>
+    </div>
+    <div class="tips-box">
+        <h4>Dicas do Chef</h4>
+        <p>Deixe descansar 30 minutos para intensificar o sabor.</p>
+    </div>
+    <div class="notes-space">
+        <h4>Notas</h4>
+        <div class="notes-lines">
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+        </div>
+    </div>
+    <div class="page-number">18</div>
+</div>
+
+<!-- RECEITA 15: Ganache de Chocolate -->
+<div class="page recipe">
+    <div class="recipe-title">Ganache de Chocolate</div>
+    <img class="recipe-image" src="ganache.jpg" alt="Ganache de Chocolate">
+    <div class="recipe-section">
+        <h3>Ingredientes</h3>
+        <ul class="ingredients-list">
+            <li>200g de chocolate meio amargo</li>
+            <li>200ml de creme de leite fresco</li>
+        </ul>
+    </div>
+    <div class="recipe-section">
+        <h3>Modo de Preparo</h3>
+        <div class="instructions">
+            <p>Aqueça o creme de leite até quase ferver.</p>
+            <p>Despeje sobre o chocolate picado e misture até homogeneizar.</p>
+            <p>Deixe esfriar e use para coberturas ou recheios.</p>
+        </div>
+    </div>
+    <div class="tips-box">
+        <h4>Dicas do Chef</h4>
+        <p>Para ganache mais firme, use chocolate com maior teor de cacau.</p>
+    </div>
+    <div class="notes-space">
+        <h4>Notas</h4>
+        <div class="notes-lines">
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+        </div>
+    </div>
+    <div class="page-number">19</div>
+</div>
+

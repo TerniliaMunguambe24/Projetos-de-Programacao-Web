@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Computador</title>
+</head>
+
+<body>
+    <h1>O Computador</h1>
+    <h1>As partes que compoem o Computador</h1>
+
+    <img src="computador.png" alt="computador">
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id officiis laudantium dolor sit ex quisquam hic ullam
+        eum, unde enim nemo autem corrupti in laboriosam tempore, necessitatibus dolorum commodi. Ipsam.</p>
+    <script>   var tagImg = document.querySelector("img");
+        tagImg.onclick = identificarParte; // evento de clique
+
+        function identificarParte(event) {
+            var tagH1 = document.querySelector("h1");
+            var tagP = document.querySelector("p");
+
+            // Coordenadas do clique dentro da imagem
+            var x = event.offsetX;
+            var y = event.offsetY;
+
+            console.log("x:", x, "y:", y); // para ver onde clicou
+
+            // Define zonas da imagem
+            if ((x >= 0 && x < 100) && (y > 0 && y < 100)) {
+                tagH1.textContent = "Monitor"
+                tagP.textContent = "O monitor Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis dolore, error, omnis eaque voluptatem illo quasi sint quia est molestiae, consectetur accusamus! Veniam, voluptates eveniet. Odit eligendi inventore beatae illo"
+            } else if ((x >= 0 && x < 150) && (y > 100 && y < 150)) {
+                tagH1.textContent = "Gabinete"
+                tagP.textContent = "O gabinete Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis dolore, error, omnis eaque voluptatem illo quasi sint quia est molestiae, consectetur accusamus! Veniam, voluptates eveniet. Odit eligendi inventore beatae illo"
+            } else if ((x >= 50 && x <= 230) && (y >= 150 && y <= 200)) {
+                tagH1.textContent = "Teclado";
+                tagP.textContent = "O teclado Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis dolore, error, omnis eaque voluptatem illo quasi sint quia est molestiae, consectetur accusamus! Veniam, voluptates eveniet. Odit eligendi inventore beatae illo";
+            } else if (x >= 230 && x <= 290 && y >= 130 && y <= 170) {
+                tagH1.textContent = "Mouse";
+                tagP.textContent = " O mouse  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis dolore, error, omnis eaque voluptatem illo quasi sint quia est molestiae, consectetur accusamus! Veniam, voluptates eveniet. Odit eligendi inventore beatae illo";
+            } else {
+                h1.textContent = "Outra área";
+                p.textContent = "Clica em uma parte específica do computador (monitor, gabinete, teclado ou mouse).";
+            }
+        }</script>
+</body>
+
+</html>

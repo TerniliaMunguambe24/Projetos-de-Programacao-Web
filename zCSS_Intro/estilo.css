@@ -1,0 +1,18 @@
+body{
+    background-color:beige;
+}
+h1{
+    background-color: blue;
+    border-color:orange;
+    text-align: center;
+    text-decoration: dashed;
+    text-shadow: 1px 3px black;
+}
+p{
+    font-family: Cambria, serif;
+    font-size:15pt;
+    font-style:italic;
+    font-weight: Bold;
+    line-height:px40;
+
+}

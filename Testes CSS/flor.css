@@ -1,0 +1,15 @@
+
+h1{
+    text-decoration: dashed;
+     color:#453304;
+     background: linear-gradient(to top, #eee4b6, #ddb23e);
+     height:50px;
+     width: 1080px;
+}
+.flower{
+    position: absolute;
+    bottom:10vmin;
+    transform-origin:bottom center;
+    z-index:10;
+    --fl-speed:0.8s;
+}
